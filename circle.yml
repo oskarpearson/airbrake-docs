@@ -1,6 +1,6 @@
 test:
   post:
-    - bundle exec jekyll build --config jekyll/_config.yml,jekyll/_config_staging.yml --source jekyll --destination jekyll/_site/docs/
+    - JEKYLL_ENV=production bundle exec jekyll build --config jekyll/_config.yml,jekyll/_config_staging.yml --source jekyll --destination jekyll/_site/docs/
 deployment:
   prod:
     branch: master
