@@ -7,7 +7,7 @@ description: Depricated Notifier API V1
 last_updated: May 7, 2016
 ---
 
-**NOTE: this API has been replaced by the V3 Notifier API**: <https://{{ site.host }}/docs/api>.
+**NOTE: this API has been replaced by the V3 Notifier API**: <https://airbrake.io/docs/api>.
 
 The V1 Notifier API will be shut down on February 1,
 2010, and projects still using the old API after that date will no longer

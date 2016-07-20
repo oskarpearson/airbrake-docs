@@ -49,7 +49,7 @@ filter by a specific deploy in the search dropdown.
 ## Deploy tracking with the API
 
 You can track a deploy with the POST to the /v4/deploys api
-endpoint [docs](https://{{ site.host }}/docs/api/#create-deploy-v4).
+endpoint [docs](https://airbrake.io/docs/api/#create-deploy-v4).
 
 You want to trigger a POST each time you deploy, specifying at least your
 `PROJECT_ID`, `PROJECT_KEY` and `environment` in the JSON data. If you provide the

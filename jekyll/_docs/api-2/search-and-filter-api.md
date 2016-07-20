@@ -6,4 +6,4 @@ last_updated: May 11, 2016
 description: search and filter api
 ---
 
-For full details please visit our new API doc site [{{ site.host }}/docs/api](https://{{ site.host }}/docs/api).
+For full details please visit our new API doc site [airbrake.io/docs/api](https://airbrake.io/docs/api).

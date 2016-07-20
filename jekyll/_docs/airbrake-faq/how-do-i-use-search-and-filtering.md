@@ -23,7 +23,7 @@ The default search box at the top of your error groups list supports text search
 
 - **Type**: The errors type/class
 - **Message**: The error message
-- **Hostname**: Will show if you send `context/hostname` as described in the [API docs](https://{{ site.host }}/docs/api/#create-notice-v3)
+- **Hostname**: Will show if you send `context/hostname` as described in the [API docs](https://airbrake.io/docs/api/#create-notice-v3)
 - **Environment**: e.g. Production, Staging, this requires you [track deploys](/docs/deploy-tracking)
 - **Component**: The controller the error occurred in, [more info](/docs/airbrake-faq/filtering-component-and-action)
 - **Action**: The controller method the error occurred in, [more info](/docs/airbrake-faq/filtering-component-and-action)

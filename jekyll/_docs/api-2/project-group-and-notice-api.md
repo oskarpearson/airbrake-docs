@@ -7,7 +7,7 @@ description: project group and notice API
 ---
 
 ## Please try out new API doc site for full
-[https://{{ site.host }}/docs/api/#projects-v4](https://{{ site.host }}/docs/api/#projects-v4)
+[https://airbrake.io/docs/api/#projects-v4](https://airbrake.io/docs/api/#projects-v4)
 
 ## Projects
 {% highlight bash %}

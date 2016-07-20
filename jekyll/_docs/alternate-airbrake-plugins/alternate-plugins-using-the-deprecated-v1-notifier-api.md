@@ -12,7 +12,7 @@ Any alternate plugins that use the V1 API will not function any longer.
 The following projects are alternative Airbrake notifier plugins for a variety
 of languages and frameworks which use the retired V1 Notifier API. For current
 API information please visit our [API
-docs](https://{{ site.host }}/docs/api/#error-notification-v3).
+docs](https://airbrake.io/docs/api/#error-notification-v3).
 
 ## Notifier plugin that using Beanstalkd
 The [Reevoo](http://www.reevoo.com) team has integrated their
