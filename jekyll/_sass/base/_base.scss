@@ -1,0 +1,36 @@
+body {
+  font-family: $sansFontFamily;
+  font-size: $fontDefault;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+a:hover,
+a:active {
+  color: $ab-blue-400;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container-fluid--ab {
+  background: $ab-grey-900;
+  .row {
+    & > .col-md-4,
+    & > .col-md-8 {
+      padding-top: 20px;
+    }
+  }
+}
+
+.site-search {
+  position: relative;
+}
+
+.ab-md-row-flex {
+  @media (min-width: $screen-md-min) {
+    display: flex;
+  }
+}

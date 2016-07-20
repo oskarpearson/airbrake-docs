@@ -1,0 +1,104 @@
+<footer id="footer" class="footer-wrap wait-load">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 copyrights">
+        <a href="/">
+          <img alt="Airbrake logo" src="/docs/assets/img/brand/airbrake-logo.png">
+        </a>
+      </div>
+      <div class="col-sm-3">
+        <h3 class="footer__title">Latest From Our Blog</h3>
+        <section class="post">
+          <header>
+            <a href="https://airbrake.io/blog/airbrake-feature/new-trello-integration">
+              New: Trello integration
+            </a>
+          </header>
+          <article>
+            <p>
+              Today we are happy to announce the&nbsp;new Trello integration for Airbrake. Just like our JIRA, Assembla and Pivotal Tracker ...
+            </p>
+          </article><header>
+          <a href="https://airbrake.io/blog/insight/more-context-for-errors-exceptions">
+            Getting even more context for errors &amp; exceptions
+          </a>
+        </header>
+        <article>
+          <p>
+            Knowing that something has gone wrong is pretty valuable. Companies and software teams spend lots of time, energy, and other ...
+          </p>
+        </article></section>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="footer__title">Useful Links</h3>
+        <div class="row-fluid">
+          <ul class="col-md-6">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/docs">Airbrake Docs</a></li>
+            <li><a href="/docs/api/">API Docs</a></li>
+            <li><a href="http://status.airbrake.io">Status Site</a></li>
+            <li><a href="mailto:support@airbrake.io">Email Support</a></li>
+          </ul>
+          <ul class="col-md-6">
+            <li><a href="https://play.google.com/store/apps/details?id=com.airbrake.android.app&amp;hl=en">Airbrake Android App</a></li>
+            <li><a href="https://itunes.apple.com/us/app/id944841582?mt=8">Airbrake iPhone App</a></li>
+            <li><a href="/jobs">Jobs at Airbrake</a></li>
+            <li><a href="/what-is-bug-tracking">What is bug tracking?</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <h3 class="footer__title">Contact Us</h3>
+        <ul class="contact">
+          <li>
+            <span class="contact__icon"><i class="fa fa-map-marker"></i></span>
+            <span class="contact__text">535 Mission Street, 14th floor, San Francisco, CA 94105</span>
+          </li>
+          <li>
+            <span class="contact__icon"><i class="fa fa-phone"></i></span>
+            <span class="contact__text">1-888-479-8323</span>
+          </li>
+          <li>
+            <a href="mailto:support@airbrake.io" title="Give us a message">
+              <span class="contact__icon"><i class="fa fa-envelope"></i></span>
+              <span class="contact__text">support@airbrake.io</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/airbrake.io" title="Airbrake on Facebook">
+              <span class="contact__icon">
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </span>
+              </span>
+              <span class="contact__text">facebook.com/airbrake.io</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/airbrake" title="Airbrake on Twitter">
+              <span class="contact__icon">
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                </span>
+              </span>
+              <span class="contact__text">@airbrake</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      Airbrake © 2016
+    </div>
+  </div>
+
+  {% if jekyll.environment == 'production' %}
+  {% include google-tag-manager.html %}
+  {% endif %}
+</footer>

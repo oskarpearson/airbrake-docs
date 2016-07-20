@@ -1,0 +1,35 @@
+<a href="#" id="nav-button">NAV</a>
+<nav class="sidebar">
+  <ul class="list-unstyled">
+    {% capture sidebar %}
+    {% for category in site.data.categories %}
+    <li><a class="sidebar__title" href="{{ site.baseurl }}/{{ category.index }}/">{{ category.name }}</a>
+      <ul class="list-unstyled sidebar__sublist">
+        {% if category.name == "API Information" %}
+        <li><strong>
+          <a href="https://{{ site.host }}/docs/api/">Complete API Specification</a>
+        </strong></li>
+        {% endif %}
+
+        {% for doc in site.docs %}
+        {% if (doc.categories contains category.slug) and (doc.slug != category.index) %}
+        {% if doc.short-title %}
+        {% assign title = doc.short-title %}
+        {% else %}
+        {% assign title = doc.title %}
+        {% endif %}
+
+        {% if doc.children %}
+        {% capture title %}{{ title }} ({{ doc.children | size }}){% endcapture %}
+        {% endif %}
+
+        <li class="{% if page.path contains doc.url %}active{% endif %}"><a href="{{ site.baseurl }}{{ doc.url }}">{{ title }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+    {% endcapture %}
+    {{ sidebar | strip_newlines }}
+  </ul>
+</nav>

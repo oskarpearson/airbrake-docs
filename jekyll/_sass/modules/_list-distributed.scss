@@ -1,0 +1,10 @@
+.list-distributed {
+  li {
+    margin: 1em;
+  }
+
+  @media ($greaterThanLarge) {
+    display: flex;
+    justify-content: space-between;
+  }
+}

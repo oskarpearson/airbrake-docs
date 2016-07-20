@@ -1,0 +1,59 @@
+// Keep synced these files
+// https://github.com/airbrake/airbrake-app/blob/master/app/assets/stylesheets/_airbrake-colors.scss
+// https://github.com/airbrake/airbrake-app/blob/master/engines/marketing/app/assets/stylesheets/marketing/utils/_airbrake-colors.scss
+// https://github.com/airbrake/airbrake-ng/blob/master/src/less/airbrake-colors.less
+
+// stylelint-disable
+$ab-grey-100: #222222;
+$ab-grey-200: #3f3f3f;
+$ab-grey-300: #505050;
+$ab-grey-400: #646464; // main shade
+$ab-grey-500: #7b7b7b;
+$ab-grey-600: #939393;
+$ab-grey-700: #b8b8b8;
+$ab-grey-800: #d0d0d0;
+$ab-grey-900: #e5e5e5;
+
+$ab-green-100: #00451c;
+$ab-green-200: #007e33;
+$ab-green-300: #00a141;
+$ab-green-400: #00c853; // main shade
+$ab-green-500: #2acc6c;
+$ab-green-600: #52d687;
+$ab-green-700: #8ee4b1;
+$ab-green-800: #b5edcc;
+$ab-green-900: #d6f5e2;
+
+$ab-orange-100: #603200;
+$ab-orange-200: #af5c00;
+$ab-orange-300: #e07600;
+$ab-orange-400: #ff8700; // main shade
+$ab-orange-500: #ffa035;
+$ab-orange-600: #ffb461;
+$ab-orange-700: #ffce98;
+$ab-orange-800: #fedfbc;
+$ab-orange-900: #feedda;
+
+$ab-red-100: #601200;
+$ab-red-200: #af2100;
+$ab-red-300: #e02b00;
+$ab-red-400: #ff3100; // main shade
+$ab-red-500: #ff5c35;
+$ab-red-600: #ff7f61;
+$ab-red-700: #ffab98;
+$ab-red-800: #fec8bc;
+$ab-red-900: #fee0da;
+
+$ab-blue-100: #012a3c;
+$ab-blue-200: #034e6e;
+$ab-blue-300: #05648d;
+$ab-blue-400: #0882b7; // main shade
+$ab-blue-500: #2e91bc;
+$ab-blue-600: #53a5c9;
+$ab-blue-700: #8fc4db;
+$ab-blue-800: #b6d8e7;
+$ab-blue-900: #d6e9f1;
+
+$ab-black: #000000;
+$ab-white: #ffffff;
+// stylelint-enable

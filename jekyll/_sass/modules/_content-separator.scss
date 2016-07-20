@@ -1,0 +1,16 @@
+.content-separator {
+  margin-top: 90px;
+  border-top: 1px solid $ab-grey-900;
+  padding-top: 54px;
+
+  // Remove top margin to any child .separator can have
+  // (the space is already defined by padding-top)
+  > *:first-child {
+    margin-top: 0 !important;
+  }
+}
+
+.content-separator--no-border {
+  margin-top: 50px;
+  border: none;
+}

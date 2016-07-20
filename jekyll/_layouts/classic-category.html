@@ -1,0 +1,23 @@
+---
+layout: classic-docs
+---
+
+{% assign category = page.categories[0] %}
+<ul class="list-unstyled">
+
+{% if category == "api-2" %}
+  <li><strong>
+    <a href="https://{{ site.host }}/docs/api/">Complete API Specification</a>
+  </strong></li>
+{% endif %}
+
+{% for doc in site.docs %}
+  {% if (doc.categories contains category) and (doc.slug != page.slug ) %}
+    {% if doc.short-title %}
+      <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.short-title }}</a></li>
+    {% else %}
+      <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>

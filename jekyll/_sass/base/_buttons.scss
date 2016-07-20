@@ -1,0 +1,63 @@
+@mixin btnColors($background, $color: $ab-white) {
+  color: $color;
+  background: $background;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color;
+  }
+
+  &:hover {
+    background: lighten($background, 5);
+  }
+
+  &:active {
+    color: $color;
+    background: darken($background, 1);
+  }
+}
+
+// Inherits styles from Bootstrap's .btn
+.btn {
+  padding: 0.8em 1em;
+  font-size: $fontDefault;
+  text-decoration: none;
+  box-shadow: 0 3px 0 rgba($ab-black, 0.1);
+
+  &:active {
+    position: relative;
+    top: 3px;
+  }
+}
+
+.btn--primary {
+  @include btnColors($ab-orange-500);
+}
+
+.btn--secondary {
+  @include btnColors($ab-blue-400);
+}
+
+.btn--error {
+  @include btnColors($ab-red-600);
+}
+
+.btn--success {
+  @include btnColors($ab-green-400);
+}
+
+.btn--line {
+  @include btnColors($ab-green-400, $ab-grey-400);
+  border: 1px solid currentColor;
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn--xlarge {
+  font-size: $fontXLarge;
+}
+
+.btn--xxlarge {
+  font-size: $fontXXLarge;
+}

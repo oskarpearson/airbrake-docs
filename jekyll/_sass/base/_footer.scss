@@ -1,0 +1,146 @@
+.footer-wrap {
+  font-size: 0.75em;
+  color: $ab-grey-900;
+  background: $ab-blue-100;
+
+  .footer__title {
+    border-bottom: 1px solid rgba($ab-grey-400, 0.5);
+    padding: 0.2em 0;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: normal;
+    color: inherit;
+  }
+
+  .post {
+    line-height: 1.3em;
+    margin: 1em 0;
+
+    header {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    footer {
+      font-style: italic;
+      text-align: right;
+      margin: 0.5em 0 0;
+    }
+  }
+
+  a {
+    color: $ab-grey-900;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $ab-white;
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      line-height: 1.75;
+    }
+  }
+
+  .contact li {
+    margin-bottom: 0.75em;
+
+    .contact__icon {
+      float: left;
+      width: 5%;
+      text-align: center;
+    }
+
+    .contact__icon,
+    .contact__text {
+      line-height: 1.3;
+    }
+
+    .contact__text {
+      display: inherit;
+      margin-left: 8%;
+    }
+
+    a {
+      display: block;
+      @include clearfix();
+
+      .fa-stack {
+        float: left;
+        width: auto;
+        height: auto;
+        font-size: 8px;
+        line-height: normal;
+      }
+
+      .fa-stack-1x {
+        top: 0;
+        line-height: 2em;
+      }
+
+      .fa-stack-2x {
+        position: static;
+      }
+
+      .fa-stack .fa-stack-base {
+        color: rgba($ab-white, 0.3);
+      }
+
+      .fa-facebook,
+      .fa-twitter {
+        color: $ab-blue-100;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        .fa-facebook,
+        .fa-twitter {
+          color: $ab-grey-100;
+        }
+
+        .fa-stack .fa-stack-base {
+          color: rgba($ab-white, 1);
+        }
+      }
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid rgba($ab-grey-400, 0.5);
+    margin-top: 2em;
+    padding: 1em 0;
+    text-align: center;
+  }
+
+  .copyrights {
+    img {
+      margin: 7em auto 0;
+      display: block;
+      opacity: 0.5;
+    }
+
+    small {
+      display: block;
+      margin: 2em 0 0 0;
+      text-align: center;
+    }
+  }
+}
+
+.license-notice{
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 70%;
+  text-align: center;
+  font-size: smaller;
+}

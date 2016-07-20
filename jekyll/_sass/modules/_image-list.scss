@@ -1,0 +1,23 @@
+.image-list {
+  margin-top: 3em;
+
+  li {
+    @media ($lessThanSmall) {
+      margin-bottom: 4em;
+    }
+  }
+}
+
+.image-list__blocklink {
+  display: block;
+}
+
+.image-list__image {
+  @media ($greaterThanSmall) {
+    max-width: 80%;
+  }
+}
+
+.image-list__title {
+  margin: 1.5em 0 1em;
+}

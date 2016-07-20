@@ -1,0 +1,29 @@
+#nav-button {
+  display: none;
+}
+
+.sidebar {
+  padding: 0 1em;
+}
+
+.sidebar__title {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 18px;
+}
+
+.sidebar__sublist {
+  margin-bottom: 3em;
+  font-size: 13px;
+  line-height: 2;
+
+  a {
+    display: block;
+    padding-left: .5em;
+
+    &:hover {
+      background: $ab-grey-800;
+      text-decoration: none;
+    }
+  }
+}

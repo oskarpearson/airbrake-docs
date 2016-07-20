@@ -1,0 +1,48 @@
+.content-wrap {
+  background: $ab-white;
+  box-shadow: inset 1px 0px 0px $ab-grey-800;
+}
+
+.content {
+  max-width: 850px;
+  padding: 2em;
+  color: $ab-grey-300;
+  font-size: 19px;
+
+  #site-search {
+    margin-bottom: 2em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  pre {
+    border-radius: 0;
+    color: $ab-white;
+    background: $ab-blue-100;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 2em;
+
+    th,
+    td {
+      padding: 0.5em;
+    }
+
+    td {
+      border-top: 1px solid $ab-grey-900;
+    }
+
+    th {
+      border-bottom: 2px solid $ab-grey-900;
+    }
+  }
+}

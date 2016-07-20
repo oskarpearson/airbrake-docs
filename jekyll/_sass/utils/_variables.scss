@@ -1,0 +1,26 @@
+// Font size
+$fontSmall: 13px;
+$fontDefault: 16px;
+$fontXDefault: 18px;
+$fontLarge: 20px;
+$fontXLarge: 25px;
+$fontXXLarge: 32px;
+$fontXXXLarge: 52px;
+
+// Viewports
+$viewportSmall: 768px;
+$viewportLarge: 980px;
+$viewportXLarge: 1200px;
+
+// Breakpoints
+$greaterThanSmall: "min-width: " + $viewportSmall;
+$lessThanSmall: "max-width: " + ($viewportSmall - 1);
+
+$greaterThanLarge: "min-width: " + $viewportLarge;
+$lessThanLarge: "max-width: " + ($viewportLarge - 1);
+
+$greaterThanXLarge: "min-width: " + $viewportXLarge;
+$lessThanXLarge: "max-width: " + ($viewportXLarge - 1);
+
+// Typography
+$sansFontFamily: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

@@ -1,0 +1,26 @@
+# Site settings
+title: "Airbrake Documentation"
+email: support@airbrake.io
+description: > # this means to ignore newlines until "url:"
+  The documentation site for Airbrake, the best error monitoring service.
+
+url: "http://localhost:4040" # the base hostname & protocol for your site
+baseurl: "/docs" # the subpath of your site, e.g. /blog
+gh_url: "https://github.com/airbrake/airbrake-docs"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+highligher: rouge
+
+collections:
+  docs:
+    output: true
+    permalink: /:path/
+
+twitter_username: airbrake
+github_username:  airbrake
+
+gems:
+  - jekyll-bootstrap-sass
