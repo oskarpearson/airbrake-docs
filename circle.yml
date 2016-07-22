@@ -6,3 +6,7 @@ deployment:
     branch: master
     commands:
       - bundle exec s3_website push --site jekyll/_site
+  staging:
+    branch: /.*/
+    commands:
+      - bundle exec s3_website push --config-dir staging --site jekyll/_site
