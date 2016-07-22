@@ -1,6 +1,7 @@
 ---
 layout: classic-docs
 title: When does my remember me cookie expire
+short-title: Remeber me cookie expiration
 categories: [airbrake-faq]
 last_updated: May 11, 2016
 description: when does my remember me cookie expire

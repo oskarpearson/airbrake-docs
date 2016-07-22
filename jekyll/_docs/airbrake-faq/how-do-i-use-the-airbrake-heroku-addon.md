@@ -1,6 +1,7 @@
 ---
 layout: classic-docs
 title: How do I use the Airbrake heroku addon
+short-title: Heroku addon
 categories: [airbrake-faq]
 last_updated: May 11, 2016
 description: how do I use the Airbrake heroku addon

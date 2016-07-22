@@ -1,6 +1,7 @@
 ---
 layout: classic-docs
 title: Third party integrations with Airbrake
+short-title: Third party integrations
 categories: [integrations]
 last_updated: May 11, 2016
 description: Third party integrations with Airbrake
