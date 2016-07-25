@@ -23,6 +23,10 @@
       display: none;
     }
 
+    @media ($lessThanLarge) {
+      display: block !important;
+    }
+
     .icon-bar {
       width: auto;
       background: rgba($ab-white, 0.5);
@@ -34,9 +38,15 @@
   }
 
   .nav-collapse {
+    padding-left: 30px;
+
     @media ($lessThanLarge) {
       display: none;
       clear: both;
+    }
+
+    @media ($greaterThanLarge) {
+      display: block !important;
     }
   }
 
