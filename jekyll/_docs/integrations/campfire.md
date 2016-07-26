@@ -6,7 +6,7 @@ last_updated: May 11, 2016
 description: Campfire
 ---
 
-With the [Campfire](http://www.campfirenow.com)integration Airbrake sends new
+With the [Campfire](http://www.campfirenow.com) integration Airbrake sends new
 error notifications to the Campfire room of your choosing.
 
 ## Gathering the Pieces
