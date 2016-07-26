@@ -1,27 +1,26 @@
 <header id="header" class="header">
-  <div class="navbar navbar--ab">
-    <div class="container-fluid">
-      <button class="navbar-toggle" data-selector=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">
-        <img class="airbrake-logo" alt="Airbrake logo"
-             src="/docs/assets/img/brand/airbrake-logo.png">
-      </a>
-      <div class="nav-collapse">
-        <ul class="nav navbar-nav ab-nav__links">
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/languages">Languages</a></li>
-          <li><a href="/enterprise">Enterprise</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/docs/">Docs</a></li>
-        </ul>
-        <ul class="nav navbar-nav ab-nav__app">
-          <li><a href="/login">Sign In</a></li>
-        </ul>
-      </div>
-    </div>
+  <a class="header__logo" href="/">
+    <img alt="Airbrake logo"
+      src="/docs/assets/img/brand/logo-header.png"
+      srcset="
+        /docs/assets/img/brand/logo-header.png 1x,
+        /docs/assets/img/brand/logo-header@2x.png 2x">
+  </a>
+  <button class="header-toggle" data-toggle="collapse" data-target=".header-links">
+    <span class="header-toggle__bar"></span>
+    <span class="header-toggle__bar"></span>
+    <span class="header-toggle__bar"></span>
+  </button>
+  <div class="header-links collapse">
+    <ul class="header-links__list header-links__list--left">
+      <li><a class="header__link" href="/pricing">Pricing</a></li>
+      <li><a class="header__link" href="/languages">Languages</a></li>
+      <li><a class="header__link" href="/enterprise">Enterprise</a></li>
+      <li><a class="header__link" href="/blog/">Blog</a></li>
+      <li><a class="header__link header__link--active" href="/docs/">Docs</a></li>
+    </ul>
+    <ul class="header-links__list header-links__list--right">
+      <li><a class="header__link" href="/login">Sign In</a></li>
+    </ul>
   </div>
 </header>

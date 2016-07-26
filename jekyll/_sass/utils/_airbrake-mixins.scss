@@ -8,3 +8,20 @@
   overflow: hidden;
   *zoom: 1;
 }
+
+// Inline list
+@mixin ab-list-inline() {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  & > li {
+    float: left;
+  }
+}
+
+// Unstyled list
+@mixin ab-list-unstyled() {
+  padding-left: 0;
+  list-style: none;
+}

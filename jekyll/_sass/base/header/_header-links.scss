@@ -1,0 +1,34 @@
+.header-links {
+  @include clearfix();
+  @media ($lessThanSmall) {
+    clear: both;
+  }
+  @media ($greaterThanSmall) {
+    // State class added by Bootstrap's collapse.js
+    &.collapse {
+      display: block;
+      // collapse.js leaves an inline style of height: 0px
+      // override that rule for larger breakpoints
+      height: auto!important;
+    }
+  }
+}
+
+.header-links__list {
+  @include ab-list-unstyled();
+  @media ($greaterThanSmall) {
+    @include ab-list-inline();
+  }
+}
+
+.header-links__list--left {
+  @media ($greaterThanSmall) {
+    float: left;
+  }
+}
+
+.header-links__list--right {
+  @media ($greaterThanSmall) {
+    float: right;
+  }
+}

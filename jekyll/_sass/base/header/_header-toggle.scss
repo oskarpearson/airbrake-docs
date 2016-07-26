@@ -1,0 +1,23 @@
+.header-toggle {
+  float: right;
+  width: 50px;
+  padding: 10px;
+  border: 1px solid transparent;
+  margin: 23px 15px 8px 0;
+  background-color: rgba($ab-black, 0.2);
+  border-radius: 4px;
+
+  @media ($greaterThanSmall) {
+    display: none;
+  }
+}
+
+.header-toggle__bar {
+  display: block;
+  height: 2px;
+  background: rgba($ab-white, 0.5);
+
+  & + .header-toggle__bar {
+    margin-top: 6px;
+  }
+}
