@@ -24,3 +24,6 @@ github_username:  airbrake
 
 gems:
   - jekyll-bootstrap-sass
+
+bootstrap:
+  assets: true
