@@ -99,6 +99,6 @@ Note: This may cause you to hit your max errors per minute limit
 config.ignore_only = []
 {% endhighlight %}
 
-## More Info and Customizations in the Airbrake github wiki
+## More Info and Customizations in the Airbrake GitHub wiki
 Please visit [Airbrake gem repo](https://github.com/airbrake/airbrake) for
 more config customizations and special use cases.

@@ -8,7 +8,7 @@ description: Sending uncaught Python exceptions to Airbrake
 ---
 
 ## Overview
-This example shows you how to send uncaught exceptions in Python to Airbrake.  For general instructions how to setup Airbrake with your Python application please visit the repository on Github [here](https://github.com/airbrake/airbrake-python).
+This example shows you how to send uncaught exceptions in Python to Airbrake.  For general instructions how to setup Airbrake with your Python application please visit the repository on GitHub [here](https://github.com/airbrake/airbrake-python).
 
 By overriding `sys.excepthook` we can send uncaught exceptions to Airbrake.
 

@@ -9,7 +9,7 @@ description: Installing Airbrake in an Android application
 
 ## Setting up your Android project
 Download the Airbrake Jar of the build from source via
-[Github](https://github.com/airbrake/airbrake-android).
+[GitHub](https://github.com/airbrake/airbrake-android).
 Copy the .jar file to your Android app's `libs/` folder.
 Import the `AirbrakeNotifier` class in your app's `main` Activity.
 
