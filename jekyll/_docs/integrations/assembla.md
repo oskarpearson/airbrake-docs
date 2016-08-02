@@ -5,10 +5,6 @@ categories: [integrations]
 last_updated: May 11, 2016
 description: Assembla
 ---
-
-**NOTE: This feature is only available with [paid assembla
-plans](https://www.assembla.com/plans).**
-
 This guide will help you add the Assembla integration to start the automatically
 posting new Airbrake errors to an Assembla space that you choose.
 
