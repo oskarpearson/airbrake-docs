@@ -12,7 +12,7 @@ description: Installing Airbrake in a Java application
 Configuring Airbrake is a simple task whether you are a Java Novice or Expert.
 In our examples we show you how to configure it with Maven and without it. If
 you identify bugs or would like to suggest a feature please refer to
-[Airbrake-java](https://github.com/airbrake/airbrake-java) on Github.
+[Airbrake-java](https://github.com/airbrake/airbrake-java) on GitHub.
 
 ### [Maven](http://maven.apache.org): Project management/workflow tool
 - If you want to bundle your dependencies into a WAR or EAR file, set the

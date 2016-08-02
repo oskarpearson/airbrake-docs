@@ -1,9 +1,9 @@
 ---
 layout: classic-docs
-title: Github
+title: GitHub
 categories: [integrations]
 last_updated: May 11, 2016
-description: Github
+description: GitHub
 ---
 
 # Adding The GitHub integration
@@ -33,7 +33,7 @@ https://github.com/mmcdaris/coffee-bot.git
 ![github repo url](/docs/assets/img/docs/integrations/github_repo_url.png)
 
 
-# Adding The Github Enterprise integration
+# Adding The GitHub Enterprise integration
 Create GitHub Enterprise issues for new Airbrake errors!
 This integration allows you to create a GitHub Enterprise issue from an Airbrake error manually.
 You can also set this integration to automatically create a GitHub Enterprise issue when a new type of error is reported to Airbrake.
@@ -51,7 +51,7 @@ Airbrake needs your personal GitHub Enterprise access token to create GitHub Ent
 
 ### Find your personal GitHub Enterprise access token
 
-On your Github Enterprise account go to personal **Settings**:
+On your GitHub Enterprise account go to personal **Settings**:
 
 ![github enterprise dropdown](/docs/assets/img/docs/integrations/github_enterprise_dropdown.png)
 
