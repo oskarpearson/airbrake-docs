@@ -83,10 +83,8 @@ https://airbrake-gitlab.airbrake.io/shifi/test-repo.git
 ![gitlab-ce-ee-adding-repo-url.png](/docs/assets/img/docs/integrations/gitlab_ce_ee_adding_repo_url.png)
 
 ### What do these settings mean?
-<table>
-<tr> <td><strong>Enabled</strong>: Pause/Unpause the integration</td> </tr>
-</tr> <td><strong>Auto create GitLab issue when an error occurs</strong>: Create a GitLab issue for every new type of Airbrake error</td> </tr>
-<tr> <td><strong>Production environment notifications only</strong> Only create GitLab issues for errors form the `production` environment</td> </tr>
-</table>
+- **Enabled:** Pause/Unpause the integration
+- **Auto create GitLab issue when an error occurs:** Create a GitLab issue for every new type of Airbrake error
+- **Production environment notifications only:** Only create GitLab issues for errors form the `production` environment
 
 Please email support@airbrake.io If you have any issues or questions!
