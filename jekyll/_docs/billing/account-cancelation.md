@@ -10,6 +10,9 @@ description: Account cancellation
 sure that requests to cancel accounts are legitimate.**
 
 ### How to cancel your Airbrake account
+
+![cancel-account.png](/docs/assets/img/docs/airbrake/cancel_account.png)
+
 To cancel an account, have an administrator on your account go to the *Account
 Settings* page and cancel your account by clicking the "Cancel Account" button.
 This section can be found at **Settings** -> **Account Settings** or at this URL:
