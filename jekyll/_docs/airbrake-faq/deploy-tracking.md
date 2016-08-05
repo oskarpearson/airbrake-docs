@@ -36,7 +36,7 @@ information.
 
 ### Deploys create backtrace links
 Using deploy tracking creates helpful links in your backtrace so you can
-click through to the file/line/revision in GitHub/Bitbucket.
+click through to the file/line/revision in GitHub/GitLab.
 
 ![backtrace link to github](/docs/assets/img/docs/airbrake/backtrace_link_to_github.png)
 
