@@ -8,97 +8,136 @@ description: Installing Airbrake in a Rails application
 ---
 ![ruby flag](/docs/assets/img/docs/ruby_flag.jpeg)
 
-**DEPRECATION WARNING: The information presented on this page is related to
-Airbrake v4 only. If you seek for information for Airbrake v5, please refer to
-our [gem's README](https://github.com/airbrake/airbrake)!**
+## Airbrake gem vs Airbrake Ruby
+**[The Airbrake gem](https://github.com/airbrake/airbrake)**: Acts as a
+collection of integrations with frameworks and other libraries and is built on
+top of Airbrake Ruby.
 
-*Airbrake account note: In order to create new projects and view your project's
-API key, your user needs to be an administrator on the your Airbrake account.
-Not an admin?  Contact an admin on your account, they can change your admin
-status.*
+**[Airbrake Ruby](https://github.com/airbrake/airbrake-ruby)**: The core library
+that performs exception sending, filtering sensitive values, ignoring errors,
+managing the configuration, and other heavy lifting.
 
-# Rails Installation
+We link to both projects in this guide and want to be clear about their
+responsibilities.
 
-## Rails 4.x & 3.x
-Add the airbrake gem to your Gemfile. In Gemfile:
+# Integrating Airbrake in your Rails app
+
+## Install the Airbrake gem
+Open up your `Gemfile` in your favorite text editor and add the `airbrake` gem.
+
 {% highlight ruby %}
-gem 'airbrake'
+gem 'airbrake', '~> 5.4'
 {% endhighlight %}
 
-In your project's root, run:
+> **NOTE:** This version could be out of date, [the
+README](https://github.com/airbrake/airbrake#bundler) will always have the
+correct version.
+
+To install the Airbrake gem, run from the root directory of your application.
 
 {% highlight bash %}
 bundle install
-rails generate airbrake --api-key your_project_key_here
 {% endhighlight %}
 
-The generator creates a file under `config/initializers/airbrake.rb` configuring Airbrake with your API key. This file should be checked into your version control system so that it is deployed to your staging and production environments.
+## Configure the Airbrake gem to report to your project
 
-Here is an [asciicast](https://asciinema.org/a/20035) of this process.
-
-## Rails 2.x
-Add the airbrake gem to your app. In `config/environment.rb`:
-
-{% highlight ruby %}
-config.gem 'airbrake'
-{% endhighlight %}
-
-or if you are using bundler:
-
-{% highlight ruby %}
-gem 'airbrake', :require => 'airbrake/rails'
-{% endhighlight %}
-
-Then from your project's RAILS_ROOT, and in your development environment, run:
+This generation command is meant to be run from the root directory of your
+application.
 
 {% highlight bash %}
-rake gems:install
-rake gems:unpack GEM=airbrake
-script/generate airbrake --api-key your_key_here
+rails g airbrake PROJECT_ID PROJECT_KEY
 {% endhighlight %}
 
-As always, if you choose not to vendor the airbrake gem, make sure every server you deploy to has the gem installed or your application won't start.
+> **INFO:** This creates the `config/initializers/airbrake.rb` file containing
+your `PROJECT_ID` and `PROJECT_KEY` along with some common config options
+and descriptions.
 
-The generator creates a file under `config/initializers/airbrake.rb` configuring Airbrake with your API key. This file should be checked into your version control system so that it is deployed to your staging and production environments.
+Additional configuration options are detailed in the [airbrake-ruby
+README](https://github.com/airbrake/airbrake-ruby#configuration).
 
-## Errors from development, test, cucumber envs
-Exceptions raised from Rails environments named development, test or cucumber will be ignored by default.
+## Testing your configuration
+The following rake command to sends a test exception to verify your app's
+configuration.
 
-You can clear the list of ignored environments with this setting:
+{% highlight bash %}
+rake airbrake:test
+# A Successful test should result in a locate link to see your test exception
+The test exception was sent. Find it here: https://airbrake.io/locate/1745875337968541048
+{% endhighlight %}
 
+> **HELP:** If you don't see the locate link, please email the complete output
+of `rake airbrake:test` to [support@airbrake.io](mailto:support@airbrake.io).
+
+## Ignoring errors
+You can choose which errors to ignore before sending them to Airbrake with [**the
+`add_filter` method**](https://github.com/airbrake/airbrake-ruby#airbrakeadd_filter).
+This makes it simple to ignore errors based on type, message, file, region, or
+any other part of the [error's
+JSON](https://airbrake.io/docs/api/#create-notice-v3).
+
+For example, to ignore all `StandardError`s you could use the following
+`add_filter`:
 {% highlight ruby %}
-config.development_environments = []
+Airbrake.add_filter do |notice|
+  if notice[:errors].any? { |error| error[:type] == 'StandardError' }
+    notice.ignore!
+  end
+end
 {% endhighlight %}
 
-if you want to report **500 Errors** from these environments you will need to change the consider_all_reqeusts_local from true to false in config/environments/development.rb:
+> **TIP:** A good place to keep your `add_filter`s is below your `configure`
+block in `config/initializers/airbrake.rb`
 
-{% highlight ruby %}
-config.consider_all_requests_local = false
-# Shows prod style errors
-{% endhighlight %}
+## Filtering keys
+You can use
+[blacklist](https://github.com/airbrake/airbrake-ruby#blacklist_keys) or
+[whitelist](https://github.com/airbrake/airbrake-ruby#whitelist_keys) filtering
+to specify keys to filter [out of the payload](https://airbrake.io/docs/api/#create-notice-v3)
+(`environment`, `parameters`, `session`, etc). Before sending an
+error, filtered keys will be substituted with the `[Filtered]` label.
 
-## Errors Ignored by default
+## Deploy tracking
+With deploy tracking you can send information about the deployment of your app
+to Airbrake. This unlocks error filtering by deploy and deploy markers are
+added to your error graphs.
 
-Airbrake will not report errors with the following classes by default
+![graph with deploys](/docs/assets/img/docs/airbrake/graph_with_deploys.png)
 
-{% highlight ruby %}
-ActiveRecord::RecordNotFound
-ActionController::RoutingError
-ActionController::InvalidAuthenticityToken
-CGI::Session::CookieStore::TamperedWithCookie
-ActionController::UnknownHttpMethod
-ActionController::UnknownAction
-AbstractController::ActionNotFound
-Mongoid::Errors::DocumentNotFound
-{% endhighlight %}
+We offer several ways to track your deploys:
 
-You can allow errors from all classes to be sent with the following config line
-Note: This may cause you to hit your max errors per minute limit
+- [Deploy tracking with the Rake task](https://github.com/airbrake/airbrake#rake-task)
+- [Deploy tracking with Capistrano](https://github.com/airbrake/airbrake#capistrano)
+- [Deploy tracking guide](/docs/airbrake-faq/deploy-tracking/)
+- [Deploy tracking API (create, list, show)](https://airbrake.io/docs/api/#deploys-v4)
 
-{% highlight ruby %}
-config.ignore_only = []
-{% endhighlight %}
+## Supported frameworks
+Since it's not all about Rails, here are some of our favorite supported ruby
+frameworks:
 
-## More Info and Customizations in the Airbrake GitHub wiki
-Please visit [Airbrake gem repo](https://github.com/airbrake/airbrake) for
-more config customizations and special use cases.
+##  Web frameworks
+
+- [Sinatra](https://github.com/airbrake/airbrake#sinatra)
+- [Rack applications](https://github.com/airbrake/airbrake#rack)
+  - [Our guide for appending info from Rack requests](https://github.com/airbrake/airbrake#rack)
+    is applicable to all Rack apps (including Rails).
+
+## Job processing libraries
+
+- [ActiveJob](https://github.com/airbrake/airbrake#activejob)
+- [Resque](https://github.com/airbrake/airbrake#resque)
+- [Sidekiq](https://github.com/airbrake/airbrake#sidekiq)
+- [DelayedJob](https://github.com/airbrake/airbrake#delayedjob)
+
+## Additional libraries
+
+- [Rake](https://github.com/airbrake/airbrake#rake)
+- [Plain Ruby scripts](https://github.com/airbrake/airbrake#plain-ruby-scripts)
+
+## More information available on GitHub
+Please visit the [Airbrake gem repo](https://github.com/airbrake/airbrake)
+for more configuration options, use cases, examples, and tips.
+
+## Looking for the Heroku guide?
+If so, you may prefer [Getting started with Airbrake, Rails, &
+Heroku](/docs/ruby/0-60-airbrake-rails-31-heroku/), in which you will create a
+new rails app on heroku that integrates with airbrake.
