@@ -11,7 +11,8 @@ Airbrake supports webhooks
 You can supply us with a URL that we will POST to every time a new error occurs
 (or a resolved error re-occurs). We will send a JSON object containing
 information about the error to your URL. You can use this to build your own
-service that performs some action every time an exception is thrown.
+service that performs some action every time an exception is thrown. Webhook
+integration supports only TLSv1.2 protocol version.
 
 ### JSON structure
 The JSON Airbrake will post to your webhook url has the following structure:
