@@ -61,7 +61,7 @@ configuration.
 
 {% highlight bash %}
 rake airbrake:test
-# A Successful test should result in a locate link to see your test exception
+# A successful test should result in a locate link to see your test exception
 The test exception was sent. Find it here: https://airbrake.io/locate/1745875337968541048
 {% endhighlight %}
 
@@ -118,7 +118,7 @@ frameworks:
 
 - [Sinatra](https://github.com/airbrake/airbrake#sinatra)
 - [Rack applications](https://github.com/airbrake/airbrake#rack)
-  - [Our guide for appending info from Rack requests](https://github.com/airbrake/airbrake#rack)
+  - [Our guide for appending info from Rack requests](https://github.com/airbrake/airbrake#appending-information-from-rack-requests)
     is applicable to all Rack apps (including Rails).
 
 ## Job processing libraries
